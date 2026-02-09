@@ -1,29 +1,46 @@
-# Node
-node_modules
-dist
+# === Dependencies ===
+node_modules/
 
-# Rust/Tauri
-target
+# === Build outputs ===
+dist/
+target/
+src-tauri/gen/schemas/
 
-# Local DBs/State
-vectors.db
-.swarm
+# === OS files ===
+.DS_Store
+Thumbs.db
+Desktop.ini
 
-# IDE/Tooling
-.idea
-.vscode
+# === IDE / Editor ===
+.idea/
+.vscode/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-Thumbs.db
+# === Environment / Secrets ===
+.env
+.env.*
 
-# Executables
+# === Executables / Installers ===
 *.exe
-*.bin
-*.app
 *.msi
 *.dmg
 *.deb
 *.rpm
+*.AppImage
+*.bin
+*.app
+
+# === AI / Dev tooling (not part of app source) ===
+.claude/
+.claude-flow/
+.mcp.json
+CLAUDE.md
+vectors.db
+.swarm/
+
+# === Logs / Runtime ===
+*.log
+*.pid
+npm-debug.log*
+pnpm-debug.log*
