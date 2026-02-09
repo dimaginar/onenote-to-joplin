@@ -1,0 +1,29 @@
+# Node
+node_modules
+dist
+
+# Rust/Tauri
+target
+
+# Local DBs/State
+vectors.db
+.swarm
+
+# IDE/Tooling
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Executables
+*.exe
+*.bin
+*.app
+*.msi
+*.dmg
+*.deb
+*.rpm

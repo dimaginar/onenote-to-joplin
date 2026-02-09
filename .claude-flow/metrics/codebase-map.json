@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-02-09T14:58:26.305Z",
+  "projectRoot": "/home/barney/onenote-to-joplin",
+  "structure": {
+    "hasPackageJson": true,
+    "hasTsConfig": true,
+    "hasClaudeConfig": true,
+    "hasClaudeFlow": true
+  },
+  "scannedAt": 1770649106306
+}
