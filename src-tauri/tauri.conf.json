@@ -32,8 +32,11 @@
       "icons/128x128.png",
       "icons/icon.ico"
     ],
-    "nsis": {
-      "installMode": "currentUser"
+    "resources": ["../LICENSE"],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser"
+      }
     }
   }
 }
