@@ -4,14 +4,14 @@ A Windows desktop tool that checks if your system is ready to migrate from Micro
 
 ## ✅ What It Checks
 
-| Check | What it verifies |
-|-------|-----------------|
-| **Joplin** | Joplin desktop app is installed |
-| **Windows OS** | Windows 10 or 11, build version |
-| **OneNote (Desktop)** | OneNote desktop app is installed with working COM automation (not the Store/UWP version) |
-| **Word** | Microsoft Word is installed with working COM automation (needed for export rendering) |
-| **OneNote Auto-Sync** | Sync-on-close is enabled in OneNote settings |
-| **OneNote Full Download** | Notebooks are fully downloaded locally (not cloud-only stubs) |
+| Check                     | What it verifies                                                                         |
+| ------------------------- | ---------------------------------------------------------------------------------------- |
+| **Joplin**                | Joplin desktop app is installed                                                          |
+| **Windows OS**            | Windows 10 or 11, build version                                                          |
+| **OneNote (Desktop)**     | OneNote desktop app is installed with working COM automation (not the Store/UWP version) |
+| **Word**                  | Microsoft Word is installed with working COM automation (needed for export rendering)    |
+| **OneNote Auto-Sync**     | Sync-on-close is enabled in OneNote settings                                             |
+| **OneNote Full Download** | Notebooks are fully downloaded locally (not cloud-only stubs)                            |
 
 Each check returns a clear status — pass, fail, warning, or skipped — with guided remediation steps for any issues found.
 
@@ -29,13 +29,21 @@ This project is licensed under the [MIT License](LICENSE).
 
 A ready-to-use compiled version is available at [dimaginar.com](https://dimaginar.com). If you find this tool useful, purchasing the compiled version is the best way to support the project.
 
+## ☕ Support Development
+
+If this tool helped you prepare for a smooth OneNote-to-Joplin migration, consider supporting its development. Donations help fund a Code Signing Certificate to remove the Windows SmartScreen warning and make the tool more trusted for everyone.
+
+[Donate with PayPal](https://www.paypal.com/donate/?business=Q4JJUB58QT7SN) · [Donate with iDEAL](https://betaalverzoek.rabobank.nl/betaalverzoek/?id=MiDjVyNBSN-Qy288Zb0sJg)
+
 ## 🔧 Building from Source
 
 See the [Build Guide](docs/human_guide.md) for instructions on building from WSL2.
 
-## 🛠️ Tech Stack
+##  🛠️ Tech Stack
 
-- [Tauri 2](https://v2.tauri.app/) — Rust backend with native Windows APIs
+- [Tauri 2](https://v2.tauri.app/) + Rust — native Windows registry, COM automation, and system detection
 - React 19 + TypeScript — Frontend
 - Zustand — State management
 - Tailwind CSS 4 — Styling
+
+
