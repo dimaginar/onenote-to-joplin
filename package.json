@@ -1,6 +1,6 @@
 {
   "name": "onenote-to-joplin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OneNote to Joplin Readiness Tool",
   "type": "module",
   "scripts": {

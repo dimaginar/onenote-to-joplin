@@ -6,9 +6,8 @@ const mockScanResult: ScanResult = {
   checks: [
     { id: "joplin", label: "Joplin", status: "pass", message: "Joplin 3.1.24 found at C:\\Users\\User\\AppData\\Local\\Programs\\joplin", remediation: null },
     { id: "windows_os", label: "Windows OS", status: "pass", message: "Windows 11 Enterprise 23H2 (Build 22631.4890)", remediation: null },
-    { id: "onenote", label: "OneNote (Desktop)", status: "pass", message: "Version 16.0 found", remediation: null },
+    { id: "onenote", label: "OneNote (Desktop)", status: "pass", message: "Version 16.0 found — COM automation verified.", remediation: null },
     { id: "word", label: "Word", status: "fail", message: "Word desktop not found", remediation: "Install Microsoft Office with Word included." },
-    { id: "com_bridge", label: "COM Automation", status: "warning", message: "OneNote.Application OK. Word.Application failed.", remediation: "Repair your Office installation." },
     { id: "sync_auto", label: "OneNote Auto-Sync", status: "skipped", message: "Skipped \u2014 OneNote Desktop not installed", remediation: null },
     { id: "sync_download", label: "OneNote Full Download", status: "skipped", message: "Skipped \u2014 OneNote Desktop not installed", remediation: null },
   ],

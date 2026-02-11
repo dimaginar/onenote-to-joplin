@@ -1,6 +1,6 @@
 # OneNote to Joplin Readiness
 
-A Windows desktop tool that checks if your system is ready to migrate from Microsoft OneNote to [Joplin](https://joplinapp.org/). It verifies installed software, COM automation support, and OneNote sync settings — so you can identify and fix issues before starting a migration.
+A Windows desktop tool that checks if your system is ready to migrate from Microsoft OneNote to [Joplin](https://joplinapp.org/). It verifies installed software, COM automation, and OneNote sync settings — so you can identify and fix issues before starting a migration.
 
 ## ✅ What It Checks
 
@@ -8,9 +8,8 @@ A Windows desktop tool that checks if your system is ready to migrate from Micro
 |-------|-----------------|
 | **Joplin** | Joplin desktop app is installed |
 | **Windows OS** | Windows 10 or 11, build version |
-| **OneNote (Desktop)** | OneNote desktop app is installed (not the Store version) |
-| **Word** | Microsoft Word is installed (used by some migration tools) |
-| **COM Automation** | COM bridge is functional (required for programmatic access to OneNote) |
+| **OneNote (Desktop)** | OneNote desktop app is installed with working COM automation (not the Store/UWP version) |
+| **Word** | Microsoft Word is installed with working COM automation (needed for export rendering) |
 | **OneNote Auto-Sync** | Sync-on-close is enabled in OneNote settings |
 | **OneNote Full Download** | Notebooks are fully downloaded locally (not cloud-only stubs) |
 

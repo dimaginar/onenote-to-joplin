@@ -5,7 +5,10 @@ import {
   CircleHelp,
   MinusCircle,
   Wrench,
+  ExternalLink,
 } from "lucide-react";
+import { openUrl } from "@tauri-apps/plugin-opener";
+import { isTauri } from "../../utils/tauri";
 import type { CheckResult } from "../../stores/types";
 import { cn } from "../../utils/cn";
 import { Button } from "../ui/button";
@@ -90,7 +93,9 @@ export function CheckDetail({
         <div className="space-y-3">
           <h4 className="text-sm font-medium">How to fix</h4>
           <div className="rounded-lg border border-warning/20 bg-warning/5 p-4">
-            <p className="text-sm leading-relaxed">{check.remediation}</p>
+            <p className="text-sm leading-relaxed">
+              <TextWithLinks text={check.remediation!} />
+            </p>
           </div>
           {onStartGuide && (
             <Button size="sm" onClick={onStartGuide} className="gap-1.5">
@@ -113,5 +118,35 @@ export function CheckDetail({
         </p>
       )}
     </div>
+  );
+}
+
+function TextWithLinks({ text }: { text: string }) {
+  const parts = text.split(/(https?:\/\/\S+)/g);
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.match(/^https?:\/\//) ? (
+          <a
+            key={i}
+            href={part}
+            onClick={(e) => {
+              e.preventDefault();
+              if (isTauri()) {
+                openUrl(part);
+              } else {
+                window.open(part, "_blank");
+              }
+            }}
+            className="inline-flex items-center gap-0.5 text-primary hover:underline"
+          >
+            {part}
+            <ExternalLink className="h-3 w-3 inline shrink-0" />
+          </a>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
   );
 }

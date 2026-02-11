@@ -3,7 +3,6 @@ pub mod joplin_check;
 pub mod os_check;
 pub mod onenote_check;
 pub mod word_check;
-pub mod com_check;
 pub mod sync_check;
 
 use crate::types::{CheckStatus, ScanResult, ScanError};
@@ -13,11 +12,10 @@ pub fn run_all_checks() -> Result<ScanResult, ScanError> {
     let os = os_check::check();
     let onenote = onenote_check::check();
     let word = word_check::check();
-    let com = com_check::check();
     let sync_auto = sync_check::check_auto_sync();
     let sync_download = sync_check::check_full_download();
 
-    let checks = vec![joplin, os, onenote, word, com, sync_auto, sync_download];
+    let checks = vec![joplin, os, onenote, word, sync_auto, sync_download];
     let overall = if checks.iter().any(|c| c.status == CheckStatus::Fail) {
         CheckStatus::Fail
     } else if checks.iter().any(|c| c.status == CheckStatus::Warning) {

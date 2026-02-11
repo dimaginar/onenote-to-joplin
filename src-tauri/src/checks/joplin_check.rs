@@ -34,7 +34,7 @@ pub fn check() -> CheckResult {
             remediation: Some(
                 "A Joplin configuration folder exists but the application was not found. \
                  Joplin may have been uninstalled or is a portable installation in a \
-                 non-standard location. Reinstall from https://joplinapp.org/download/ \
+                 non-standard location. Reinstall from https://joplinapp.org \
                  or verify it is accessible."
                     .into(),
             ),
@@ -48,7 +48,7 @@ pub fn check() -> CheckResult {
         status: CheckStatus::Fail,
         message: "Joplin desktop application not found.".into(),
         remediation: Some(
-            "Install Joplin from https://joplinapp.org/download/. The desktop application \
+            "Install Joplin from https://joplinapp.org. The desktop application \
              is required as the migration target. Both the per-user install and the \
              system-wide install are supported."
                 .into(),

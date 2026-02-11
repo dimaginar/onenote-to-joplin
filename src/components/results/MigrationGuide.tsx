@@ -2,7 +2,6 @@ import {
   Rocket,
   ExternalLink,
   AlertTriangle,
-  BookOpen,
 } from "lucide-react";
 import { openUrl } from "@tauri-apps/plugin-opener";
 import { cn } from "../../utils/cn";
@@ -61,7 +60,7 @@ export function MigrationGuide({ allPassed, issueCount }: MigrationGuideProps) {
           <Step
             number={1}
             title="Download OneNote Md Exporter"
-            description="Get the exporter tool from GitHub."
+            description="Get the exporter tool from GitHub. The page includes a detailed guide covering supported features and known limitations."
             link={{
               label: "onenote-md-exporter",
               url: "https://github.com/alxnbl/onenote-md-exporter",
@@ -69,37 +68,20 @@ export function MigrationGuide({ allPassed, issueCount }: MigrationGuideProps) {
           />
           <Step
             number={2}
+            title="Prepare your notebooks"
+            description="Launch OneNote and ensure all notebooks you want to export are open and fully synced."
+          />
+          <Step
+            number={3}
             title='Export using "Joplin Raw Directory" format'
             description="Run the exporter, choose Joplin Raw Directory output, and note the export folder path."
           />
           <Step
-            number={3}
+            number={4}
             title="Import into Joplin"
             description='In Joplin, click File &gt; Import &gt; "RAW - Joplin Export Directory" and select the export folder.'
           />
         </ol>
-      </div>
-
-      {/* Detailed guide link */}
-      <div className="rounded-lg border border-border bg-secondary/30 p-3 flex items-start gap-2.5">
-        <BookOpen className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
-        <div>
-          <p className="text-sm font-medium">Detailed Migration Guide</p>
-          <p className="text-sm text-muted-foreground mt-0.5">
-            Covers supported features, known limitations, and advanced options.
-          </p>
-          <a
-            href="https://github.com/alxnbl/onenote-md-exporter/blob/main/doc/migration-to-joplin.md"
-            onClick={(e) => {
-              e.preventDefault();
-              openUrl("https://github.com/alxnbl/onenote-md-exporter/blob/main/doc/migration-to-joplin.md");
-            }}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline mt-1.5"
-          >
-            View on GitHub
-            <ExternalLink className="h-3.5 w-3.5" />
-          </a>
-        </div>
       </div>
     </div>
   );
