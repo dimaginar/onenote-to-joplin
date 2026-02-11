@@ -17,17 +17,27 @@ Each check returns a clear status — pass, fail, warning, or skipped — with g
 
 ## 🔍 Transparency & Safety
 
-This project was developed with the assistance of AI coding tools. The entire source code is public so you can review exactly what the application does.
+This project was developed with the assistance of AI coding tools. To build trust, the entire source code is public for community audit.
+
+**Why the "Unknown Publisher" warning?** To remove the Windows SmartScreen warning, an app must be signed with a Code Signing Certificate. These certificates are expensive annual subscriptions. As an independent developer, I currently do not have one — your [donations](#-support-development) help make this possible.
 
 - **Read-only**: The tool only reads registry keys and checks for installed software. It does not modify your system, OneNote data, or any files.
 - **Verified code**: If you are tech-savvy, feel free to audit the Rust backend (`src-tauri/src/`) and the React frontend (`src/`).
-- **Open Source**: Full transparency — the code speaks for itself.
+
+## 🚀 Quick Start
+
+1. Download `onenote-to-joplin.exe` from the [Releases](https://github.com/dimaginar/onenote-to-joplin/releases) section.
+   - **Recommended browsers**: Firefox or Vivaldi typically allow the download without additional warnings.
+   - **Microsoft Edge**: You may see a warning that the file is "not commonly downloaded." Click the three dots (...) next to the download, select **Keep**, then **Show more** > **Keep anyway**.
+   - **Work laptops**: On some managed environments, downloading .exe files from GitHub may be blocked by system policy.
+2. Run the tool. If Windows SmartScreen appears, click **More info** > **Run anyway**.
+3. Click **Scan** and review the results. Follow the guided remediation for any failed checks.
 
 ## 📄 License & Distribution
 
 This project is licensed under the [MIT License](LICENSE).
 
-A ready-to-use compiled version is available at [dimaginar.com](https://dimaginar.com). If you find this tool useful, purchasing the compiled version is the best way to support the project.
+A ready-to-use compiled version will soon be available at [dimaginar.com](https://dimaginar.com). If you find this tool useful, making a donation or purchasing the compiled version is the best way to support the project.
 
 ## ☕ Support Development
 
@@ -39,11 +49,9 @@ If this tool helped you prepare for a smooth OneNote-to-Joplin migration, consid
 
 See the [Build Guide](docs/human_guide.md) for instructions on building from WSL2.
 
-##  🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - [Tauri 2](https://v2.tauri.app/) + Rust — native Windows registry, COM automation, and system detection
 - React 19 + TypeScript — Frontend
 - Zustand — State management
 - Tailwind CSS 4 — Styling
-
-
