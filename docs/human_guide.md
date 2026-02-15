@@ -49,7 +49,7 @@ pnpm tauri build --runner cargo-xwin --target x86_64-pc-windows-msvc
 
 Output:
 - `src-tauri/target/x86_64-pc-windows-msvc/release/onenote-to-joplin.exe`
-- `src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/OneNote to Joplin Readiness_0.1.0_x64-setup.exe`
+- `src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/OneNote to Joplin Readiness_0.2.0_x64-setup.exe`
 
 The installer places the app in `%LOCALAPPDATA%` (no admin rights needed).
 

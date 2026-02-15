@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub mod registry;
 pub mod joplin_check;
 pub mod os_check;

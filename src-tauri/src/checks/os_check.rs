@@ -175,6 +175,7 @@ pub fn check() -> CheckResult {
     }
 }
 
+#[allow(dead_code)]
 #[cfg(not(windows))]
 pub fn get_os_display_string() -> String {
     "Non-Windows OS".to_string()

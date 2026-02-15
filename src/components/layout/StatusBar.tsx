@@ -15,7 +15,7 @@ export function StatusBar() {
       <span className={cn("text-xs", statusColors[statusType])}>
         {statusMessage}
       </span>
-      <span className="text-xs text-muted-foreground">v0.1.0</span>
+      <span className="text-xs text-muted-foreground">v0.2.0</span>
     </div>
   );
 }

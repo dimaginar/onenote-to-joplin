@@ -1,29 +1,32 @@
-We are excited to announce the first alpha release of OneNote to Joplin Readiness! This tool checks whether your Windows system is ready to migrate from Microsoft OneNote to Joplin, identifying and helping you fix issues before you start.
+# v0.2.0
 
-## Highlights
+Security hardening release. No functional changes — the tool works the same, but is now locked down properly.
 
-* **6 Readiness Checks**: Validates Joplin, Windows OS, OneNote Desktop (with COM automation), Word (with COM automation), Auto-Sync, and Full Download settings.
-* **Smart Office Detection**: 3-layer detection strategy (traditional registry, Click-to-Run configuration, and live COM activation) supports traditional installs, Microsoft 365, and enterprise deployments. COM activation is the definitive test — if it works, the export will work.
-* **Safety First**: Read-only tool — it checks registry keys and installed software but never modifies your system or data.
-* **Guided Remediation**: Each failed check includes step-by-step fix instructions with clickable links. Non-standard Office installs (e.g. MSIX/Store) get a clear warning instead of a false failure.
-* **Migration Guide**: Built-in 4-step guide walks you through downloading the exporter, preparing your notebooks, exporting, and importing into Joplin.
-* **Pure Windows Focus**: Optimized for Windows 10 (2004+) and Windows 11.
-* **Fast & Native**: Built with Rust (Tauri 2) for instant scan results — no Electron, no bloat.
-* **Transparency**: Open-source code available for community audit.
+## Changes
 
-## Features
+### Security
+- **Content Security Policy enabled** — strict CSP (`default-src 'self'`, `script-src 'self'`, `style-src 'self' 'unsafe-inline'`, `img-src 'self' data:`) prevents potential XSS attacks.
+- **URL opening restricted** — the opener capability now only allows `joplinapp.org` and the `onenote-md-exporter` GitHub page. Previously any URL could be opened.
 
-* Master-detail results view with checks grouped by status (fail, warning, pass, skipped).
-* Markdown report export with scan results and remediation steps.
-* Multi-step guided fix wizard for each failed check.
-* Smart detection: registry lookups, Click-to-Run configuration, filesystem probing, and live COM object testing.
-* Windows 11 detection even when registry reports "Windows 10".
-* Skips sync checks gracefully when OneNote Desktop is not installed.
-* Keyboard shortcuts: `Ctrl+R` to scan, `Ctrl+S` to save report.
-* Dark theme with custom scrollbars.
+### Housekeeping
+- Suppressed dead-code compiler warnings for cross-platform stubs (all flagged functions are actively used on Windows).
+- Version bumped across all config files and the in-app status bar.
+
+## What It Checks
+
+6 readiness checks for migrating OneNote to Joplin:
+
+| Check | What it verifies |
+|-------|-----------------|
+| Joplin | Joplin is installed |
+| Windows OS | Windows 10 (2004+) or 11 |
+| OneNote (Desktop) | Desktop OneNote with COM automation |
+| Word | Word with COM automation |
+| OneNote Auto-Sync | Automatic sync is enabled |
+| OneNote Full Download | Full file/image download is enabled |
 
 ## Security & Privacy
 
 This application only reads Windows registry keys and tests COM object availability. It does not write to the registry, modify files, or collect any personal data. The full source code is available for review.
 
-> **Note for Windows Users**: This app is currently not signed with a Code Signing Certificate. You may see a "Windows protected your PC" (SmartScreen) warning. You can safely bypass this by clicking "More info" > "Run anyway."
+> **Note for Windows Users**: This app is not yet signed with a Code Signing Certificate. You may see a "Windows protected your PC" (SmartScreen) warning. Click "More info" then "Run anyway."
