@@ -40,10 +40,9 @@ This project is licensed under the [MIT License](LICENSE).
 A ready-to-use compiled version will soon be available at [dimaginar.com](https://dimaginar.com). If you find this tool useful, making a donation or purchasing the compiled version is the best way to support the project.
 
 ## ☕ Support Development
+If this tool helped you prepare for a smooth OneNote-to-Joplin migration, consider supporting its development. You can grab the packaged installer version on Payhip.
 
-If this tool helped you prepare for a smooth OneNote-to-Joplin migration, consider supporting its development. Donations help fund a Code Signing Certificate to remove the Windows SmartScreen warning and make the tool more trusted for everyone.
-
-[Donate with PayPal](https://www.paypal.com/donate/?business=Q4JJUB58QT7SN) · [Donate with iDEAL](https://betaalverzoek.rabobank.nl/betaalverzoek/?id=MiDjVyNBSN-Qy288Zb0sJg)
+[Get it on Payhip](https://payhip.com/b/LOgwY)
 
 ## 🔧 Building from Source
 
